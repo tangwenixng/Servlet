@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<web-app xmlns="http://java.sun.com/xml/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemalocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+	<servlet>
+		<servlet-name>Ch3 Beer</servlet-name>
+		<servlet-class>com.example.web.BeerSelect</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Ch3 Beer</servlet-name>
+		<url-pattern>/Selection.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>downloadJar</servlet-name>
+		<servlet-class>com.example.web.CodeReturn</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>downloadJar</servlet-name>
+		<url-pattern>/downloadJar.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>listenerTest</servlet-name>
+		<servlet-class>com.example.web.ListenerTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>listenerTest</servlet-name>
+		<url-pattern>/listenerTest.do</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>breed</param-name>
+		<param-value>Great Dog</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>
+			com.example.web.MyServletContextListener
+		</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>
+			com.example.web.BeerAttributeListener
+		</listener-class>
+	</listener>
+</web-app>
