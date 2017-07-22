@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>JSPServlet</display-name>
+  <servlet>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>com.twx.servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.twx.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  
+ <servlet>
+    <servlet-name>LoginServlet02</servlet-name>
+    <servlet-class>com.twx.servlet.LoginServlet02</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet02</servlet-name>
+    <url-pattern>/loginServlet02</url-pattern>
+  </servlet-mapping>
+   
+  <filter>
+  	<filter-name>FilterOne</filter-name>
+  	<filter-class>com.twx.filter.FilterOne</filter-class>
+  	<init-param>
+  		<param-name>param</param-name>
+  		<param-value>jikexueyuan</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>FilterOne</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>FilterTwo</filter-name>
+  	<filter-class>com.twx.filter.FilterTwo</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>FilterTwo</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+   <filter>
+  	<filter-name>EncodingFilter</filter-name>
+  	<filter-class>com.twx.filter.EncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>utf-8</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
